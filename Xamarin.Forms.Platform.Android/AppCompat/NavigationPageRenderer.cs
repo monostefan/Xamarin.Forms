@@ -583,7 +583,7 @@ namespace Xamarin.Forms.Platform.Android.AppCompat
 					fragments.Add(fragment);
 				}
 			}
-			transaction.Commit();
+			transaction.CommitAllowingStateLoss();
 
 			// The fragment transitions don't really SUPPORT telling you when they end
 			// There are some hacks you can do, but they actually are worse than just doing this:
