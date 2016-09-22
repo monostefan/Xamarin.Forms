@@ -25,6 +25,8 @@ namespace Xamarin.Forms
 
 		public static readonly BindableProperty TitleIconProperty = BindableProperty.CreateAttached("TitleIcon", typeof(FileImageSource), typeof(NavigationPage), default(FileImageSource));
 
+		public static readonly BindableProperty AllowStateLossProperty = BindableProperty.Create("AllowStateLoss", typeof(bool), typeof(NavigationPage), false);
+
 		static readonly BindablePropertyKey CurrentPagePropertyKey = BindableProperty.CreateReadOnly("CurrentPage", typeof(Page), typeof(NavigationPage), null);
 		public static readonly BindableProperty CurrentPageProperty = CurrentPagePropertyKey.BindableProperty;
 
@@ -48,6 +50,12 @@ namespace Xamarin.Forms
 		{
 			get { return (Color)GetValue(BarTextColorProperty); }
 			set { SetValue(BarTextColorProperty, value); }
+		}
+
+		public bool AllowStateLoss
+		{
+			get { return (bool)GetValue(AllowStateLossProperty); }
+			set { SetValue(AllowStateLossProperty, value); }
 		}
 
 		[Obsolete("Use BarBackgroundColor and BarTextColor to change NavigationPage bar color properties")]
